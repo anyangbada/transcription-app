@@ -93,7 +93,7 @@ transcription-app/
 
 ---
 
-## Notes
+## Assumptions
 
 - Audio files must be in supported formats (`.wav`, `.mp3`, etc.)
 - Whisper model used: `openai/whisper-tiny` via Hugging Face
@@ -117,7 +117,7 @@ transcription-app/
 
 ---
 
-#### `POST /transcribe`
+#### `POST /v1/transcribe`
 
 - **Description:** Accepts one or more audio files and process asynchonous transcription. Results are saved in the database.
 - **Request:**
@@ -134,7 +134,7 @@ transcription-app/
 
 ---
 
-#### `GET /transcriptions`
+#### `GET /v1/transcriptions`
 
 - **Description:** Retrieve all transcription records stored in the database.
 - **Response:**
@@ -155,7 +155,7 @@ transcription-app/
 
 ---
 
-#### `GET /search?file_name=sample`
+#### `GET /v1/search?file_name=sample`
 
 - **Description:** Search transcriptions by (partial or full) file name.
 - **Query Parameter:**

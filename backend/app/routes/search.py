@@ -8,7 +8,7 @@ from app.schemas.transcriptions import TranscriptionOut
 router = APIRouter()
 
 
-@router.get("/search", response_model=list[TranscriptionOut])
+@router.get("/v1/search", response_model=list[TranscriptionOut])
 def search_transcriptions(
     file_name: str = Query(..., min_length=1),
     db: Session = Depends(get_db)

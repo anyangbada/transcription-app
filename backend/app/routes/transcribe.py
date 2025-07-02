@@ -14,7 +14,7 @@ from app.service.transcriber import transcribe_and_save
 router = APIRouter()
 
 
-@router.post("/transcribe")
+@router.post("/v1/transcribe")
 async def transcribe_audio(background_tasks: BackgroundTasks, files: list[UploadFile] = File(...), db: Session = Depends(get_db)):
     if not all(file.filename.endswith((".wav", ".mp3", ".m4a")) for file in files):
         raise HTTPException(
