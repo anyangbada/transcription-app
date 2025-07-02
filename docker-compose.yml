@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - APP_ENV=dev
+
+  frontend:
+    build:
+      context: ./frontend/app
+    container_name: frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
